@@ -3,14 +3,14 @@ import { createTheme, responsiveFontSizes } from "@mui/material";
 let theme = createTheme({
     palette: {
       primary: {
-        main: '#A9A9A9',
+        main: '#111',
       },
       secondary: {
-        main: '#696969',
+        main: '#FFD700',
       },
     },
     typography: {
-        fontFamily: ("system-ui")
+        fontFamily: ("Raleway")
     }
   });
 
