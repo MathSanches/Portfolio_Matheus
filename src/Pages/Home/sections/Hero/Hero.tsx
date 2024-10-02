@@ -1,9 +1,10 @@
-import {Box, Container, Grid, styled, Typography } from "@mui/material"
+import {Box, Container, Grid, styled, Typography} from "@mui/material"
 import Profile from "../../../../assets/images/profile-pic.png"
 import DownloadingIcon from '@mui/icons-material/Downloading';
 import MailOutlineIcon from '@mui/icons-material/MailOutline';
 import StyledButton from "../../../../components/StyledButton/StyledButton";
 import { AnimatedBackground } from "../../../../components/AnimatedBackground/AnimatedBackground";
+
 
 
 const Hero = () => {
@@ -12,7 +13,13 @@ const Hero = () => {
         backgroundColor: theme.palette.primary.main,
         height: "100vh",
         display: "flex",
-        alignItems: "center"
+        alignItems: "center",
+        [theme.breakpoints.up('xs')]:{
+            paddingTop: "120px"
+        },
+        [theme.breakpoints.up('md')]:{
+            paddingTop: "0"
+        }
     }))
 
     const StyledImg = styled("img")(({theme})=> ({
@@ -41,13 +48,13 @@ const Hero = () => {
                         <Typography color="primary.contrastText" variant="h2" textAlign="center">I'm a software engineer</Typography>
                         <Grid container display="flex" justifyContent="center" spacing={3} pt={3}>
                             <Grid item xs={12} md={4} display="flex" justifyContent="center">
-                                <StyledButton>
+                                <StyledButton onClick={() => console.log("download")}>
                                     <DownloadingIcon/>
-                                        <Typography>Download CV</Typography>                                   
+                                        <Typography>Download CV</Typography>                                  
                                 </StyledButton>
                             </Grid>
                             <Grid item xs={12} md={4} display="flex" justifyContent="center">
-                                <StyledButton>
+                                <StyledButton onClick={() => console.log("contact")}>
                                     <MailOutlineIcon/>
                                         <Typography>Contact me</Typography>
                                 </StyledButton>
@@ -61,5 +68,7 @@ const Hero = () => {
     )
   }
   
+
+
   export default Hero
   
